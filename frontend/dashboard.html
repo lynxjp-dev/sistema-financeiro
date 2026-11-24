@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel | Finza</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo"><span class="logo-mark">F</span> Finza</div>
+
+    <div class="topbar-right">
+      <div class="user-chip">
+        <span class="avatar" id="user-avatar">?</span>
+        <span class="user-name-top" id="user-name-top">...</span>
+      </div>
+      <button type="button" id="logout-button" class="btn btn-ghost">Sair</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="hero">
+      <p class="greeting" id="user-greeting">Olá!</p>
+      <p class="balance-label">Saldo total</p>
+      <p class="balance">R$ 0,00</p>
+      <p class="hero-note">Valores de exemplo. Os dados reais chegam na próxima etapa.</p>
+    </section>
+
+    <div id="message" class="message" hidden></div>
+
+    <section class="grid">
+      <article class="card">
+        <span class="badge income">↑</span>
+        <h3>Receitas do mês</h3>
+        <p class="value">R$ 0,00</p>
+      </article>
+
+      <article class="card">
+        <span class="badge expense">↓</span>
+        <h3>Despesas do mês</h3>
+        <p class="value">R$ 0,00</p>
+      </article>
+
+      <article class="card">
+        <span class="badge profile">★</span>
+        <h3>Sua conta</h3>
+        <p class="value" id="user-role">...</p>
+        <p class="small" id="user-email">...</p>
+      </article>
+    </section>
+
+    <section class="card empty">
+      <h3>Nenhuma transação ainda</h3>
+      <p>Em breve você poderá registrar receitas e despesas por aqui.</p>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
