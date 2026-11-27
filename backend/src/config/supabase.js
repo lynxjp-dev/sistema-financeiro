@@ -15,4 +15,11 @@ function createAuthClient() {
   return createClient(env.supabaseUrl, env.supabaseAnonKey, options);
 }
 
-module.exports = { supabaseAdmin, createAuthClient };
+function createUserClient(accessToken) {
+  return createClient(env.supabaseUrl, env.supabaseAnonKey, {
+    ...options,
+    global: { headers: { Authorization: `Bearer ${accessToken}` } },
+  });
+}
+
+module.exports = { supabaseAdmin, createAuthClient, createUserClient };

@@ -307,3 +307,23 @@ input:focus {
   .hero { padding: 24px; }
   .hero .balance { font-size: 2.1rem; }
 }
+
+.single {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.single .logo { color: var(--brand); }
+.single .logo-mark { background: var(--brand); color: #ffffff; }
+
+.single .auth-card {
+  padding: 32px 28px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+}

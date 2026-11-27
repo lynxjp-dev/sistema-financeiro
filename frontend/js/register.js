@@ -20,16 +20,18 @@ form.addEventListener('submit', async (event) => {
   submitButton.textContent = 'Cadastrando...';
 
   try {
-    await apiFetch('/auth/register', {
+    const result = await apiFetch('/auth/register', {
       method: 'POST',
       body: { fullName, email, password },
     });
 
     form.reset();
-    showMessage(messageBox, 'Cadastro realizado! Redirecionando para o login...', 'success');
+    showMessage(messageBox, result.message, 'success');
+    submitButton.textContent = 'Cadastro concluído';
+
     setTimeout(() => {
       window.location.href = 'index.html';
-    }, 2000);
+    }, 5000);
   } catch (error) {
     showMessage(messageBox, errorToText(error));
     submitButton.disabled = false;
